@@ -1,0 +1,387 @@
+﻿<!DOCTYPE html>
+
+<head>
+     <title>First Registrars Nigeria Limited | Virtual Meetings Solutions | Physical - Virtual Meeting </title>
+    <link rel="icon" href="../images/icon.png" type="image/gif" sizes="16x16" />
+    <meta charset="utf-8" />
+    <link type="text/css" rel="stylesheet" href="https://source.zoom.us/2.14.0/css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="https://source.zoom.us/2.14.0/css/react-select.css" />
+
+    <!-- CSS Files ================================================== -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/bootstrap-grid.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="../css/bootstrap-reboot.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/owl.carousel.css" rel="stylesheet" type="text/css" />
+    <link href="../css/owl.theme.css" rel="stylesheet" type="text/css" />
+    <link href="../css/owl.transitions.css" rel="stylesheet" type="text/css" />
+    <link href="../css/magnific-popup.css" rel="stylesheet" type="text/css" />
+    <link href="../css/jquery.countdown.css" rel="stylesheet" type="text/css" />
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+    <!-- color scheme -->
+    <link id="colors" href="../css/colors/scheme-01.css" rel="stylesheet" type="text/css" />
+    <link href="../css/coloring.css" rel="stylesheet" type="text/css" />
+    <script src="../sweetalert/sweetalert.min.js"></script>
+    <meta content="Virtual Meetings Solutions" name="description" />
+    <meta content="Virtual Meetings, Virtual Meetings, Physical Meeting" name="keywords" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <style>
+
+        .sdk-select {
+            height: 34px;
+            border-radius: 4px;
+        }
+
+        .websdktest button {
+            float: right;
+            margin-left: 5px;
+        }
+
+        #nav-tool {
+            margin-bottom: 0px;
+        }
+
+        #show-test-tool {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            display: block;
+            z-index: 99999;
+        }
+
+        #display_name {
+            width: 250px;
+        }
+
+
+        #websdk-iframe {
+            width: 700px;
+            height: 500px;
+            border: 1px;
+            border-color: red;
+            border-style: dashed;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            margin: 0;
+        }
+
+
+
+        sup {
+            top: -15px !important;
+        }
+
+        .sethsize {
+            font-size: 45px !important;
+        }
+
+        .demospan {
+            margin-top: -25px;
+            margin-left: 30px;
+            margin-bottom: 0px;
+            font-style: italic;
+            padding: 0px;
+            font-size: 18px !important;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body onkeydown="return event.key != 'Enter';">
+    <style>
+
+        #zmmtg-root {
+            background-color: white !important;
+        }
+    </style>
+    <nav id="nav-tool" class="navbar navbar-inverse navbar-fixed-top" style="display:none ">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Zoom WebSDK CDN</a>
+            </div>
+            <div id="navbar" class="websdktest">
+                <form class="navbar-form navbar-right" id="meeting_form">
+                    <div class="form-group">
+                        <input type="text" name="display_name" id="display_name" value="2.14.0#CDN" maxLength="100"
+                               placeholder="Name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="meeting_number" id="meeting_number" value="" maxLength="200"
+                               style="width:150px" placeholder="Meeting Number" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="meeting_pwd" id="meeting_pwd" value="" style="width:150px"
+                               maxLength="32" placeholder="Meeting Password" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="meeting_email" id="meeting_email" value="" style="width:150px"
+                               maxLength="32" placeholder="Email option" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <select id="meeting_role" class="sdk-select">
+                            <option value=0>Attendee</option>
+                            <option value=1>Host</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select id="meeting_china" class="sdk-select">
+                            <option value=0>Global</option>
+                            <option value=1>China</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select id="meeting_lang" class="sdk-select">
+                            <option value="en-US">English</option>
+                            <option value="de-DE">German Deutsch</option>
+                            <option value="es-ES">Spanish Español</option>
+                            <option value="fr-FR">French Français</option>
+                            <option value="jp-JP">Japanese 日本語</option>
+                            <option value="pt-PT">Portuguese Portuguese</option>
+                            <option value="ru-RU">Russian Русский</option>
+                            <option value="zh-CN">Chinese 简体中文</option>
+                            <option value="zh-TW">Chinese 繁体中文</option>
+                            <option value="ko-KO">Korean 한국어</option>
+                            <option value="vi-VN">Vietnamese Tiếng Việt</option>
+                            <option value="it-IT">Italian italiano</option>
+                        </select>
+                    </div>
+                    <input type="hidden" value="" id="copy_link_value" />
+                    <!--<button type="submit" class="btn btn-primary" id="join_meeting">Join</button>-->
+                    <button type="submit" class="btn btn-primary" id="clear_all">Clear</button>
+                    <button type="button" link="" onclick="window.copyJoinLink('#copy_join_link')"
+                            class="btn btn-primary" id="copy_join_link">
+                        Copy Direct join link
+                    </button>
+
+                </form>
+            </div>
+            <!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div id="wrapper">
+        <div id="preloader11">
+            <div class="preloader11"></div>
+        </div>
+        <!-- header begin -->
+        <header class="scroll-light header-solid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="col-md-6">
+                                <div class="col-md-6">
+                                    <!-- logo begin -->
+                                    <div class="spacer-10"></div>
+                                    <div id="logo">
+                                        <a href="../">
+                                            <img alt="virtualMeeting" class="logo" width="148" src="../images/logo-light.png" title="First Registrars and Investor Services Limited" />
+                                            <img alt="virtualMeeting" class="logo-2" width="148" src="../images/logo.png" title="First Registrars and Investor Services Limited" />
+                                        </a>
+                                    </div>
+                                    <!-- logo close -->
+                                </div>
+
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <!-- mainmenu begin -->
+                                <ul id="mainmenu">
+                                    <li><a href="../">&nbsp;<span></span></a></li>
+                                </ul>
+                            </div>
+                            <div class="de-flex-col">
+                                <div class="menu_side_area">
+                                    <a href="../app"><i class="fa fa-pencil-square-o"></i><span>Register Online</span></a>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div class="no-bottom no-top" id="content">
+            <div id="top"></div>
+
+            <section class="full-height relative no-top no-bottom vertical-center" data-bgimage="url(../images/background/subheader.jpg) top" data-stellar-background-ratio=".9">
+                <div class="overlay-gradient t50">
+                    <div class="center-y relative">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6 text-light wow fadeInRight" data-wow-delay=".5s">
+                                    <div class="spacer-10"></div>
+                                    <h2 class="wow fadeInUp sethsize" data-wow-delay=".5s"><span>Virtual Meetings</span></h2>
+                                    <p class="demospan">First Registrars Nigeria Limited</p>
+                                    <h4 class="lead"><strong> Participate and Vote in AGM/EGM Virtually.</strong></h4>
+                                </div>
+                                <div class="col-lg-4 offset-lg-1 wow fadeIn" data-wow-delay=".5s">
+                                    <asp:Panel ID="panelvalid" runat="server">
+                                        <div class="box-rounded padding40" data-bgcolor="#ffffff">
+                                            <h3 class="mb10">Attend Virtual Meeting</h3>
+                                            <p>Please enter your meeting code.</p>
+                                            <div class="form-border">
+
+                                                <div class="field-set">
+                                                    <!--  <input type='text' name='txtMeetingcode' onkeydown="enterKeyPresseds(event);" id='txtMeetingcode' class="form-control" placeholder="Enter meeting code" autocomplete="off" required="required" />-->
+                                                    <input type='text' name='txtMeetingcode' id='txtMeetingcode' class="form-control" placeholder="Enter meeting code" autocomplete="off" required="required" />
+                                                </div>
+                                                <div class="spacer-10"></div>
+
+                                                <div class="field-set">
+
+                                                    <button onclick="return verifymeet();return false;" style="display:none" type='submit' class="btn btn-main btn-fullwidth color-2">Attend Meeting</button>
+                                                    <a href="#" style="display:none" onclick="verifymeet();return false;" class="btn btn-main btn-fullwidth color-2"><span>Attend Meeting</span></a>
+                                                    <button type="submit" class="btn btn-main color-2" id="join_meeting">Join</button>
+                                                </div>
+
+                                                <div class="clearfix"></div>
+
+                                                <div class="spacer-single"></div>
+
+                                                <asp:Label ID="errormtext" runat="server" ForeColor="Red"></asp:Label>
+                                            </div>
+                                        </div>
+                                    </asp:Panel>
+
+                                    <asp:Panel ID="panelinvalid" runat="server" style="display:none">
+                                        <div class="box-rounded padding40" data-bgcolor="#ffffff">
+                                            <h3 class="mb10">Invalid Access</h3>
+                                            <p>
+                                                Please access this page via the Virtual Meeting link sent to your email upon e-accreditation!
+                                                <br />
+                                                Thank You as you comply!
+                                            </p>
+                                        </div>
+
+                                    </asp:Panel>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- content close -->
+        <a href="#" id="back-to-top"></a>
+        <!-- footer begin -->
+        <footer class="footer-light">
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="de-flex">
+                                <div class="de-flex-col">
+                                    <a href="#">
+                                        <span class="copy">
+                                            &copy; Copyright
+                                            <script>document.write(new Date().getFullYear());</script>
+                                            First Registrars Nigeria Limited. All Rights Reserved.
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="de-flex-col">
+                                    <div class="social-icons">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+
+
+    </div>
+
+    <div id="show-test-tool" style="display:none">
+        <button type="submit" class="btn btn-primary" id="show-test-tool-btn"
+                title="show or hide top test tool">
+            Show
+        </button>
+    </div>
+    <script>
+        document.getElementById('show-test-tool-btn').addEventListener("click", function (e) {
+            var textContent = e.target.textContent;
+            if (textContent === 'Show') {
+                document.getElementById('nav-tool').style.display = 'block';
+                document.getElementById('show-test-tool-btn').textContent = 'Hide';
+            } else {
+                document.getElementById('nav-tool').style.display = 'none';
+                document.getElementById('show-test-tool-btn').textContent = 'Show';
+            }
+        })
+    </script>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+    <script src="../js/wow.min.js"></script>
+    <script src="../js/jquery.isotope.min.js"></script>
+    <script src="../js/easing.js"></script>
+    <script src="../js/owl.carousel.js"></script>
+
+    <script src="../js/jquery.magnific-popup.min.js"></script>
+    <script src="../js/enquire.min.js"></script>
+    <script src="../js/jquery.plugin.js"></script>
+    <script src="../js/jquery.lazy.min.js"></script>
+    <script src="../js/jquery.lazy.plugins.min.js"></script>
+    <script src="../js/designesia.js"></script>
+    <!--<script src="../js/crypto-3.1.9-1.min.js"></script>
+    <script src="../js/jsrsasign-all-min.js"></script>-->
+    <!--<script src="../js/jsrsasign.js"></script>-->
+
+    <script src="../js/jsrsasign-all-min.js"></script>
+    <!--<script src="http://kjur.github.io/jsrsasign/jsrsasign-latest-all-min.js"></script>-->
+    <script src="https://source.zoom.us/2.15.0/lib/vendor/react.min.js"></script>
+    <script src="https://source.zoom.us/2.15.0/lib/vendor/react-dom.min.js"></script>
+    <script src="https://source.zoom.us/2.15.0/lib/vendor/redux.min.js"></script>
+    <script src="https://source.zoom.us/2.15.0/lib/vendor/redux-thunk.min.js"></script>
+    <script src="https://source.zoom.us/2.15.0/lib/vendor/lodash.min.js"></script>
+    <script src="https://source.zoom.us/zoom-meeting-2.15.0.min.js"></script>
+
+
+    <!--<script src="js/tool.js"></script>
+    <script src="js/vconsole.min.js"></script>
+    <script src="js/index.js"></script>-->
+    <script src="../zoomjs/lib/vendor/tool.js"></script>
+    <script src="../zoomjs/lib/vendor/vconsole.min.js"></script>
+    <script src="../zoomjs/lib/vendor/index.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            $("#nav-tool").hide();
+            document.getElementById('nav-tool').style.display = 'Hide';
+            document.getElementById('show-test-tool-btn').textContent = 'Hide';
+
+        });
+
+
+                                        //function enterKeyPresseds(event) {
+                                        //    if (event.keyCode == 13) {
+
+                                        //        verifymeet();
+                                        //        return true;
+                                        //    } else {
+
+                                        //        return false;
+                                        //    }
+                                        //}
+
+    </script>
+</body>
+
+</html>

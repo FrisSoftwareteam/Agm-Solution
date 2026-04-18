@@ -1,0 +1,36 @@
+﻿<html>
+
+<head>
+    <title>Virtual Meeting</title>
+    <meta charset="utf-8" />
+    <link type="text/css" rel="stylesheet" href="https://source.zoom.us/2.13.0/css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="https://source.zoom.us/2.13.0/css/react-select.css" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--<meta http-equiv="refresh" content="1; URL=index.html" />-->
+</head>
+
+<body>
+
+    
+
+    <!--<script src="js/jquery-1.12.4.js"></script>-->
+
+    <script>
+      var  redirectTime = "1500";
+     var   redirectURL = "/index.html";
+        function timedRedirect() {
+            setTimeout("location.href = redirectURL;", redirectTime);
+        }
+        window.addEventListener('DOMContentLoaded', function (event) {
+            console.log('DOM fully loaded and parsed');
+            //window.location.href = "./index.html";
+            timedRedirect();
+        });
+
+
+
+    </script>
+</body>
+
+</html>

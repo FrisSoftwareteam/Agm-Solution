@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/FRIS VIRTUAL - Copy/WebService.asmx" hash="7324a733" filehash="fffff873c402305c" flags="130000" assembly="App_Code" type="WebService">
+    <filedeps>
+        <filedep name="/FRIS VIRTUAL - Copy/WebService.asmx" />
+    </filedeps>
+</preserve>

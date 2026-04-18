@@ -1,0 +1,437 @@
+﻿<html>
+<head>
+    <title>First Registrars Nigeria Limited | Virtual Meetings Solutions | Physical - Virtual Meeting </title>
+    <link rel="icon" href="../images/icon.png" type="image/gif" sizes="16x16" />
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="origin-trial" content="">
+    <link type="text/css" rel="stylesheet" href="https://source.zoom.us/2.14.0/css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="https://source.zoom.us/2.14.0/css/react-select.css" />
+    <!-- CSS Files ================================================== -->
+    <!--<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/bootstrap-grid.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="../css/bootstrap-reboot.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/owl.carousel.css" rel="stylesheet" type="text/css" />
+    <link href="../css/owl.theme.css" rel="stylesheet" type="text/css" />
+    <link href="../css/owl.transitions.css" rel="stylesheet" type="text/css" />
+    <link href="../css/magnific-popup.css" rel="stylesheet" type="text/css" />
+    <link href="../css/jquery.countdown.css" rel="stylesheet" type="text/css" />
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />-->
+    <!-- color scheme -->
+    <!--<link id="colors" href="../css/colors/scheme-01.css" rel="stylesheet" type="text/css" />
+    <link href="../css/coloring.css" rel="stylesheet" type="text/css" />-->
+
+    <Style>
+
+        #mydragdiv {
+            position: absolute;
+            z-index: 9999;
+            background-color: #f1f1f1;
+            text-align: center;
+            display: none;
+            top: 140px;
+            width: 50%;
+            border: 1px solid #d3d3d3;
+            border-radius: 14px;
+            padding: 5px;
+            font-size: 11px;
+        }
+
+        #mydragdivheader {
+            padding: 10px;
+            cursor: move;
+            z-index: 10;
+            position:absolute;
+            /*background-color: #FBB255;*/
+            background-color: #008145;
+            color: #fff;
+        }
+
+        .center-screens {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        @media (max-width: 768px) and (max-height: 1024px) {
+            #mydragdiv {
+                display: none;
+                padding: 10px;
+                font-size: 14px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                top:0px;
+                left:0px;
+                width: 90%;
+            }
+        }
+
+
+
+
+
+
+
+        /*.preview-username {
+            font-size: 20px !important;
+        }
+
+        .form-group {
+            margin-bottom: 5px !important;
+        }
+
+
+        .suspension-window-container {
+            top: 12% !important;
+        }
+
+        .preview-video2 {
+            width: 460px !important;
+            height: 160px !important;
+        }
+
+
+        .meeting-client-inner {
+            top: 13% !important;
+            left: 10px !important;
+            height: 80% !important;
+        }
+
+
+
+
+
+
+        .preview-video {
+            display: block !important;
+            margin-top: 10px !important;
+            margin-left: 10px !important;
+        }
+
+        #content_container {
+            top: 2% !important;
+            left: -10px !important;
+            height: 80% !important;
+        }
+
+
+
+
+        .mini-layout-body {
+               left: 15px !important;
+
+            margin-left: 25px !important;
+
+            display: block;
+            margin-top: 20px !important;
+
+        }
+        .sm-pt10{
+            padding-top:2px !important;
+
+        }
+
+        header.header-mobile {
+            padding-top: 2px !important;
+            padding-top: 20px
+        }*/
+    </Style>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <div id="preloader">
+            <div class="preloader1"></div>
+        </div>
+
+        <!-- header begin -->
+        <header class="transparent header-light scroll-light" style="background-color:white !important; height:40px !important">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10" style="top:5px !important;">
+                            <div class="col-md-6">
+                                <div class="col-md-6">
+                                    <!-- logo begin -->
+                                    <div id="logo">
+                                        <a href="../">
+                                            <img alt="virtuals" class="logo" width="148" src="../images/logo-light.png" title="First Registrars and Investor Services Limited" />
+                                             
+                                        </a>
+                                    </div>
+                                    <!-- logo close -->
+                                </div>
+
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <!-- mainmenu begin -->
+                                <ul id="mainmenu">
+                                    <li><a href="../">&nbsp;<span></span></a></li>
+                                </ul>
+                            </div>
+                            <div class="de-flex-col">
+                                <div class="menu_side_area" style="display: none">
+
+                                    <a href="#" onclick="ClearSession();"><i class="fa fa-sign-out"></i><span>Sign Out</span></a>
+                                    <button id="openPopupButton" onclick="showpop();return false;">Open Popup</button>
+                                    <a href="#" onclick="showpop();return false;"><i class="fa fa-sign-out"></i><span>show pop</span></a>
+                                    <asp:Button ID="btnHidden" runat="server" Style="display: none" ClientIDMode="Static" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- header close -->
+        <!-- content begin -->
+        <div class="no-bottom no-top" id="content">
+            <div id="top"></div>
+
+            <section aria-label="section">
+                <div class="container">
+
+                    <asp:Panel ID="PanelWelcomes" runat="server" Style="display: none">
+
+                        <div class="row">
+                            <div class="col-md-7 col-xs-12">
+
+                                <h3 class="wow fadeInUp" data-wow-delay=".5s">
+                                    <span class="id-color-2">
+                                        Welcome
+                                        <asp:Label ID="lblholdername" runat="server" Text=""></asp:Label>
+                                    </span>
+                                </h3>
+
+
+
+
+                            </div>
+
+
+                        </div>
+
+                    </asp:Panel>
+
+
+                    <asp:Panel ID="PanelStepOne" runat="server">
+                        <div class="row">
+                            <div class="col-md-7 col-xs-12">
+                                <h3 class="wow fadeInUp" data-wow-delay=".5s">
+                                    <span class="id-color-2">
+                                        Live Meeting Accessed by
+                                        <asp:Label ID="lblhodern" runat="server" Text=""></asp:Label>
+
+
+                                    </span>
+                                </h3>
+
+                                <p id="lblcompanytextname" class="wow fadeInUp" data-wow-delay="1s">
+                                </p>
+
+                                <div class="form-border">
+                                    <div class="row">
+                                        <input type="hidden" id="hiddenvdurl" />
+
+                                        <div id="ifamecurrentvideo" class="col-md-12 col-sm-12 col-xs-12 ">
+
+
+
+                                            <asp:Label ID="lblmeetingdatetime" runat="server" Text="" Style="display: none"></asp:Label>
+
+
+                                        </div>
+
+
+
+
+                                    </div>
+                                </div>
+                                <div class="spacer-20"></div>
+                            </div>
+
+
+                        </div>
+
+                    </asp:Panel>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- content close -->
+        <a href="#" id="back-to-top"></a>
+        <!-- footer begin -->
+        <footer class="footer-light">
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="de-flex">
+                                <div class="de-flex-col">
+                                    <a href="#">
+                                        <span class="copy">
+                                            &copy; Copyright
+                                            <script>document.write(new Date().getFullYear());</script>
+                                            First Registrars and Investor Services Limited. All Rights Reserved.
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="de-flex-col">
+                                    <div class="social-icons">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+    </div>
+
+
+    <div class="center-screens">
+        <div id="mydragdiv">
+            <div id="mydragdivheader">Drag here to move</div>
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <div style="margin-left: 20px">
+                        <h3 class="wow fadeInUp" data-wow-delay=".5s"><span style="color:#FBB255  !important" class="id-color-2">Active Resolution</span></h3>
+                        <p class="wow fadeInUp" data-wow-delay="1s" style="font-size:1.3em !important; line-height: 0.9 !important;">
+                            Below was your vote on this resolution at registration and you can change it, if you wish. Only your last selection will count.
+                        </p>
+
+
+                        <div class="form-border">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12">
+                                            <!--<h3 class="plan-tagline currreso" id="Resolutiontext"></h3>-->
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row" id="votevalue">
+
+                                        <h2 style="color:#008145 !important" id="Resolutiontext"></h2>
+
+                                        <div class="forms" id="step1">
+                                            <div class="steps-inner lightSpeedIn">
+                                                <div class="radio-field" onclick="postvote(this,1)">
+                                                    <input type="radio" groupname="votinss" id="voteoption1" value="1" data-attrib-poll-id-for="1" onclick="postvote(this, 1)" />
+                                                    <label>FOR</label>
+                                                </div>
+                                                <div class="radio-field" onclick="postvote(this,2)">
+                                                    <input type="radio" groupname="votinss" id="voteoption2" value="2" data-attrib-poll-id-against="2" onclick="postvote(this, 2)" />
+                                                    <label>AGAINST</label>
+                                                </div>
+                                                <div class="radio-field" onclick="postvote(this,3)">
+                                                    <input type="radio" groupname="votinss" id="voteoption3" value="3" data-attrib-poll-id-abstain="3" onclick="postvote(this, 3)" />
+                                                    <label>ABSTAIN</label>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script src="../sweetalert/sweetalert.min.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/wow.min.js"></script>
+    <script src="../js/jquery.isotope.min.js"></script>
+    <script src="../js/easing.js"></script>
+    <script src="../js/owl.carousel.js"></script>
+    <script src="../js/OwlCarousel2Thumbs.min.js"></script>
+    <script src="../js/validation.js"></script>
+    <script src="../js/jquery.magnific-popup.min.js"></script>
+    <script src="../js/enquire.min.js"></script>
+    <script src="../js/jquery.plugin.js"></script>
+    <script src="../js/jquery.countTo.js"></script>
+    <script src="../js/jquery.countdown.js"></script>
+    <script src="../js/jquery.lazy.min.js"></script>
+    <script src="../js/jquery.lazy.plugins.min.js"></script>
+    <script src="../js/designesia.js"></script>
+
+    <script src="../js/crypto-3.1.9-1.min.js"></script>
+    <script src="../js/jsrsasign-all-min.js"></script>
+
+    <script src="../js/jsrsasign.js"></script>
+
+    <!--<script src="https://source.zoom.us/2.14.0/lib/vendor/react.min.js"></script>
+    <script src="https://source.zoom.us/2.14.0/lib/vendor/react-dom.min.js"></script>
+    <script src="https://source.zoom.us/2.14.0/lib/vendor/redux.min.js"></script>
+    <script src="https://source.zoom.us/2.14.0/lib/vendor/redux-thunk.min.js"></script>
+    <script src="https://source.zoom.us/2.14.0/lib/vendor/lodash.min.js"></script>
+    <script src="https://source.zoom.us/zoom-meeting-2.14.0.min.js"></script>-->
+
+    <script src="https://source.zoom.us/2.15.0/lib/vendor/react.min.js"></script>
+    <script src="https://source.zoom.us/2.15.0/lib/vendor/react-dom.min.js"></script>
+    <script src="https://source.zoom.us/2.15.0/lib/vendor/redux.min.js"></script>
+    <script src="https://source.zoom.us/2.15.0/lib/vendor/redux-thunk.min.js"></script>
+    <script src="https://source.zoom.us/2.15.0/lib/vendor/lodash.min.js"></script>
+    <script src="https://source.zoom.us/zoom-meeting-2.15.0.min.js"></script>
+
+
+    <script src="../zoomjs/lib/vendor/tool.js"></script>
+    <script src="../zoomjs/lib/vendor/vconsole.min.js"></script>
+    <script src="../zoomjs/lib/vendor/meeting.js"></script>
+    <script>
+        function launchFullScreen(element) {
+            if (element.requestFullScreen) {
+                element.requestFullScreen();
+            } else if (element.mozRequestFullScreen) {
+                element.mozRequestFullScreen();
+            } else if (element.webkitRequestFullScreen) {
+                element.webkitRequestFullScreen();
+            }
+        }
+        $(document).ready(function () {
+            launchFullScreen(document.documentElement); // the whole page
+            //var uid   = GetURLParameter('uid');
+            //var params = GetURLParameter('params');
+            //var sna = GetURLParameter('sna');
+        });
+                  //  launchFullScreen(document.documentElement); // the whole page
+                  //  launchFullScreen(document.getElementById("videoElement")); // any individual element
+    </script>
+</body>
+
+</html>

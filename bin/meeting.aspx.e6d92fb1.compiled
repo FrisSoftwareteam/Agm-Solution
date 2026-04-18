@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/FRIS VIRTUAL - Copy/zoom/meeting.aspx" hash="edd5c6e5a" filehash="3fd5d45c4bd31273" flags="110000" assembly="App_Web_goo35miy" type="ASP.zoom_meeting_aspx">
+    <filedeps>
+        <filedep name="/FRIS VIRTUAL - Copy/zoom/meeting.aspx" />
+        <filedep name="/FRIS VIRTUAL - Copy/zoom/meeting.aspx.vb" />
+    </filedeps>
+</preserve>

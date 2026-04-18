@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/FRIS VIRTUAL - Copy/physical/Default.aspx" hash="edd5c6e5a" filehash="4b453e9713e8e7c8" flags="110000" assembly="App_Web_xdmlmtpp" type="ASP.physical_default_aspx">
+    <filedeps>
+        <filedep name="/FRIS VIRTUAL - Copy/physical/Default.aspx" />
+        <filedep name="/FRIS VIRTUAL - Copy/physical/Default.aspx.vb" />
+    </filedeps>
+</preserve>

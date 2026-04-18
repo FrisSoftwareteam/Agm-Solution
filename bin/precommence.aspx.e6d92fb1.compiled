@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/FRIS VIRTUAL - Copy/zoom/precommence.aspx" hash="edd5c6e5a" filehash="89380ca1db9a7d83" flags="110000" assembly="App_Web_goo35miy" type="ASP.zoom_precommence_aspx">
+    <filedeps>
+        <filedep name="/FRIS VIRTUAL - Copy/zoom/precommence.aspx" />
+        <filedep name="/FRIS VIRTUAL - Copy/zoom/precommence.aspx.vb" />
+    </filedeps>
+</preserve>

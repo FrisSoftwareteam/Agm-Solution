@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/FRIS VIRTUAL - Copy/live-meeting/Default.aspx" hash="edd5c6e5a" filehash="cdac1e42329ffa44" flags="110000" assembly="App_Web_dojpexlk" type="ASP.live_meeting_default_aspx">
+    <filedeps>
+        <filedep name="/FRIS VIRTUAL - Copy/live-meeting/Default.aspx" />
+        <filedep name="/FRIS VIRTUAL - Copy/live-meeting/Default.aspx.vb" />
+    </filedeps>
+</preserve>
